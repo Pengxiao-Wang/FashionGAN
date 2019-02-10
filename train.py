@@ -12,13 +12,14 @@ dataset_size = len(data_loader)
 print('#training images = %d' % dataset_size)
 model = create_model(opt)
 visualizer = Visualizer(opt)
-
+# import pdb; pdb.set_trace()
 total_steps = 0
 
 for epoch in range(1, opt.niter + opt.niter_decay + 1):
     epoch_start_time = time.time()
     save_result = True
     for i, data in enumerate(dataset):
+        import pdb; pdb.set_trace()
         iter_start_time = time.time()
         total_steps += opt.batchSize
         epoch_iter = total_steps - dataset_size * (epoch - 1)
